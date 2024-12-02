@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Const. Project</title>
+        <style>
+            body { background: linear-gradient(to bottom, 
+                                #7ec8d5,    
+                                #a1d7e5,    
+                                #8fbce0,   
+                                #b2e3d9);   
+    background-size: 100% 325%; font-family: 'Georgia', serif; color: black; margin: 0; padding: 0; height: 100vh; 
+    } h1, h2, h3, p { text-align: center; text-decoration: underline; margin-top: 25px; margin-bottom: 25px; line-height: 1.5; padding-top: 5px; padding-bottom: 5px;
+    } table, th, td { border: 1px solid black; padding: 10px; } .navbar { background-color: #333; display: flex; justify-content: space-evenly; align-items: center; padding: 8px 20px; font-family: Georgia, serif;
+    } .navbar a, .dropdown { float: none;  display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none; font-family: Georgia, serif;
+    } .navbar a { border: none; outline: none; } .navbar a:hover { background-color: #ddd; color: black; } .dropdown { position: relative;
+    } .dropdown .dropbtn { background-color: #333; border: none; outline: none; color: white; padding: 14px 16px; font-size: 16px; cursor: pointer; font-family: Georgia, serif;
+    } .dropdown:hover .dropbtn { background-color: #ddd; color: black; } .dropdown .dropbtn:focus { outline: none; box-shadow: none; 
+    } .dropdown-content { display: none; position: absolute; background-color: #333; min-width: 160px; z-index: 1;
+    } .dropdown:hover .dropdown-content { display: block; } .dropdown-content a { color: white; padding: 12px 16px; text-decoration: none; display: block; font-family: Georgia, serif;
+    } .dropdown-content a:hover { background-color: #ddd; color: black; } .polaroid-container { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 50px;
+    } .polaroid { background-color: white; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); margin-bottom: 25px; border-top: 10px solid white; width: 20%;  max-width: 300px; } 
+    .polaroid img { width: 100%; height: auto;} .container { text-align: center; padding: 8px 15px;} .table-container { display: flex; justify-content: center; align-items: center; padding: 20px; }
+    @media screen and (max-width: 768px) { .navbar { flex-direction: column; } .polaroid-container { flex-direction: column; } .polaroid { width: 45%; } .table-container { padding: 10px; }
+    } @media screen and (max-width: 480px) { .polaroid { width: 90%; } } #quote-generator { margin-top: 40px; padding: 20px; background-color: #f0f8ff;  border-radius: 10px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); width: 60%; margin-left: auto; margin-right: auto;
+    } #quote-generator h2 { font-size: 24px; margin-bottom: 15px; } #quote-generator p { font-size: 20px; margin-top: 10px; } button { margin-top: 20px; padding: 10px 20px; background-color: #333; color: white; font-size: 16px; border: none; border-radius: 5px; cursor: pointer;
+    } button:hover { background-color: #444; }
+        </style>
+    </head>
+    <body>
+        <h1 style="text-align:center;">Constitutional Thinkers Project</h1>
+        
+        <p style="text-align:center;">Creators: Zellie Winterich, Anna Costello, Ryan Pavlone, and James Paul</p>
+        <!-- dropdown menu code -->
+        <section id="navigation">
+            <div class="navbar">
+                <a href="asssets/c_homepage.xhtml">Home</a> 
+                <div class="dropdown">
+                    
+                    <button class="dropbtn">The US Constitution
+                        <i class="fa fa-caret-down"></i>
+                        <!-- links for the constitution document-->
+                    </button>
+                    
+                    <div class="dropdown-content">
+                        <!-- Link to load the Constitution HTML page in the same window -->
+                        <a href="assets/final_const.html">Constitution Document</a>
+                    </div>
+                    
+                </div> 
+                <div class="dropdown">
+                    <button class="dropbtn">Seminal Works 
+                        <i class="fa fa-caret-down"></i>
+                        <!-- links for seminal works -->
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="assets/CMH/hobbes.xhtml">De Cive</a>
+                        <a href="assets/Locke.xhtml">Second Treatise</a>
+                        <a href="assets/rousseau.xhtml">Social Contract</a>
+                        <a href="assets/SOL.xhtml">Spirit of Laws</a>
+                        <!-- for each seminal work -->
+                    </div>
+                </div> 
+                <div class="dropdown">
+                    <button class="dropbtn">About 
+                        <i class="fa fa-caret-down"></i>
+                        <!-- links for the about section -->
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="assets/about.xhtml">Methodology</a>
+                        <!-- methodology page -->     
+                        <a href="assets/thinker.xhtml">Thinkers</a>
+                        <!-- thinkers page -->
+                    </div>
+                </div> 
+                <div class="dropdown">
+                    <button class="dropbtn">Data and Graphs 
+                        <i class="fa fa-caret-down"></i>
+                        <!-- links for SVG, heatmap, and poll-->
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="assets/const-test.html">Attribute Data</a>
+                        <a href="assets/opinionpoll.html">Opinion Poll</a>
+                        <a href="assets/SVGdata_sig.xhtml">SVG Graphs</a>
+                    </div>
+                </div> 
+                <a href="assets/citation.xhtml">Work Cited</a>
+            </div>
+        </section>
+        
+        <!-- fun fact generator -->
+        <section id="fun-fact" style="text-align:center; margin-top: 40px; font-family: Georgia, serif;">
+            <button onclick="generateFunFact()" style="padding: 12px 24px; font-size: 18px; background-color: #333; color: white; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease; font-family: Georgia, serif;">Generate Fun Fact</button>
+            <p id="fact-display" style="font-size: 20px; font-style: italic; color: #333; margin-top: 20px; font-family: Georgia, serif;">Click the button to see a fun fact!</p>
+        </section>
+        
+        <!-- images -->
+        <section id="pics">
+            <div class="polaroid-container">
+                <div class="polaroid">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Gilbert_Stuart_Williamstown_Portrait_of_George_Washington.jpg/440px-Gilbert_Stuart_Williamstown_Portrait_of_George_Washington.jpg" alt="washington" class="center" width="325" height="350"/>
+                    <div class="container">
+                        <p>George Washington</p>
+                    </div>
+                </div>
+                <div class="polaroid">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/James_Madison_1816.jpg/440px-James_Madison_1816.jpg" alt="madison" class="center" width="325" height="350"/>
+                    <div class="container">
+                        <p>James Madison</p>
+                    </div>
+                </div>
+                <div class="polaroid">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Alexander_Hamilton_%28cropped%29.jpg/440px-Alexander_Hamilton_%28cropped%29.jpg" alt="hamilton" class="center" width="325" height="350"/>
+                    <div class="container">
+                        <p>Alexander Hamilton</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- table -->
+        <section id="table">
+            <h2 style="text-align:center;">Enlightenment Thinkers Information</h2>
+            <p style="text-align:center;">A quick rundown of our philsophical thinkers and their basic backgrounds</p>
+            <div class="table-container">
+                <table style="width:95%; height:95%;">
+                    <tr>
+                        <th>Thinker</th>
+                        <th>Country of Origin</th>
+                        <th>Dates</th>
+                        <th>Seminal Work</th>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;">Jean-Jacques Rousseau</td>
+                        <td style="text-align:center;">France/Switzerland</td>
+                        <td style="text-align:center;">June 28, 1712, to July 2, 1778</td>
+                        <td style="text-align:center;"><i>The Social Contract, 1762</i></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;">John Locke</td>
+                        <td style="text-align:center;">United Kingdom</td>
+                        <td style="text-align:center;">August 29, 1632 to October 28, 1704</td>
+                        <td style="text-align:center;"><i>Second Treatise of Government, 1689</i></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;">Charles Louis de Secondat, baron de La Brède et de Montesquieu</td>
+                        <td style="text-align:center;">France</td>
+                        <td style="text-align:center;">January 18, 1689 to February 10, 1755</td>
+                        <td style="text-align:center;"><i>The Spirit of Laws, 1748</i></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;">Thomas Hobbes</td>
+                        <td style="text-align:center;">United Kingdom</td>
+                        <td style="text-align:center;">April 5, 1588 to December 4, 1679</td>
+                        <td style="text-align:center;"><i>De Cive, 1642</i></td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        
+        <!-- quote generator -->
+        <section id="quote-generator" style="text-align:center; margin-top: 40px; font-family: Georgia, serif;">
+            <h2>Random Quote Generator</h2>
+            <p id="quote-text" style="font-size: 20px; font-style: italic; font-family: Georgia, serif;">Click the button below to get a quote from one of the thinkers.</p>
+            <p id="quote-author" style="font-size: 18px; font-style: normal; font-weight: bold; font-family: Georgia, serif;"></p>
+            <button onclick="generateQuote()" style="font-family: Georgia, serif;">Get Quote</button>
+        </section>
+        
+        <!-- images pt 2 -->
+        <section id="photos">
+            <div class="polaroid-container">
+                <div class="polaroid">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Thomas_Hobbes_by_John_Michael_Wright.jpg/440px-Thomas_Hobbes_by_John_Michael_Wright.jpg" alt="hobbes" class="center" width="325" height="350"/>
+                    <div class="container">
+                        <p>Thomas Hobbes</p>
+                    </div>
+                </div>
+                <div class="polaroid">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/John_Locke.jpg/440px-John_Locke.jpg" alt="locke" class="center" width="325" height="350"/>
+                    <div class="container">
+                        <p>John Locke</p>
+                    </div>
+                </div>
+                <div class="polaroid">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Charles_Montesquieu.jpg/440px-Charles_Montesquieu.jpg" alt="mont" class="center" width="325" height="350"/>
+                    <div class="container">
+                        <p>Montesquieu</p>
+                    </div>
+                </div>
+                <div class="polaroid">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Jean-Jacques_Rousseau_%28painted_portrait%29.jpg/440px-Jean-Jacques_Rousseau_%28painted_portrait%29.jpg" alt="rousseau" class="center" width="325" height="350"/>
+                    <div class="container">
+                        <p>Jean-Jacques Rousseau</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- java script for quote/fact generators -->
+        <script type="text/javascript">
+            function generateFunFact() {
+                const facts = [
+                    "George Washington was the first President of the United States.",
+                    "James Madison is known as the 'Father of the Constitution'.",
+                    "Alexander Hamilton was the first Secretary of the Treasury.",
+                    "Thomas Hobbes authored 'Leviathan', a foundational work in political theory.",
+                    "John Locke's ideas heavily influenced the American Revolution.",
+                    "Montesquieu's full name was Charles Louis de Secondat, baron de La Brède et de Montesquieu.",
+                    "Rousseau is commonly linked with the Romantic movement for his writings on life, beauty, and nature.",
+                    "Thomas Hobbes did not only write philosophy, in fact he was also known for his mathematic capabilities.",
+                    "Thomas Hobbes met several influential thinkers such as Galileo and Descartes during his travels.",
+                    "Montesquieu is often referenced as creating the idea of checks and balances within government.",
+                    "John Locke's writings were partially responsible for the inclusion of life, liberty, and property within the American Constitution.",
+                    "The original Bill of Rights was only ten amendments, with the other seventeen being included throughout American history.",
+                    "The Supreme Court of the United States acts on precedent, meaning they can only rule on the words provided to them in the Constitution and its amendments, or past rulings.",
+                    "The United States Constitution is the oldest written National Constitution.",
+                    "Locke is also known as the 'Father of Liberalism'.",
+                    "Locke's philosophy also had a large impact on psychology, especially his 'Tabula Rasa'.",
+                    "When Montesquieu first wrote the 'Persian Letters' he published it under a pen name.",
+                    "Montesquieu and fellow Enlightenment thinker, Voltaire, were friends.",
+                    "Zellie's go-to coffee order is a large vanilla (not vanilla bean) cold brew with half and half, light ice (extremely light), and 2 espresso shots. During the winter months, she'll add dark chocolate peppermint too. Sometimes she'll top with cold foam if she's feeling risky. And of course she gets this from her work place, Saxbys!",
+                    "Thomas Hobbes, while having writing that could be viewed as pro-democracy, was actually a royalist and believed in the power of the monarchy.",
+                    "The United States of America was founded in 1776 but the Constitution was not written until after."
+                ];
+
+                const randomFact = facts[Math.floor(Math.random() * facts.length)];
+                document.getElementById("fact-display").textContent = randomFact;
+            }
+        </script>
+        
+        <script type="text/javascript">
+    const quotes = [
+        { text: "All men are liable to error; and most men are, in many points, by passion or interest, under temptation to it.", author: "John Locke" },
+        { text: "He that judges without informing himself to the utmost that he is capable, cannot acquit himself of judging amiss.", author: "John Locke" },
+        { text: "New opinions are always suspected, and usually opposed, without any other reason but because they are not already common.", author: "John Locke" },
+        { text: "Wherever Law ends, Tyranny begins.", author: "John Locke" },
+        { text: "There is no greater tyranny than that which is perpetrated under the shield of the law and in the name of justice.", author: "Montesquieu" },
+        { text: "Liberty is the right to do whatever the laws permit.", author: "Montesquieu" },
+        { text: "I have always observed that to succeed in the world one should seem a fool, but be wise.", author: "Montesquieu" },
+        { text: "Very good laws may be ill timed.", author: "Montesquieu" },
+        { text: "Man is born free, and everywhere he is in chains.", author: "Jean-Jacques Rousseau" },
+        { text: "Every person has a right to risk their own life for the preservation of it.", author: "Jean-Jacques Rousseau" },
+        { text: "Civilization is a hopeless race to discover remedies for the evils it produces.", author: "Jean-Jacques Rousseau" },
+        { text: "The world of reality has its limits; the world of imagination is boundless.", author: "Jean-Jacques Rousseau" },
+        { text: "No arts; no letters; no society; and which is worst of all, continual fear and danger of violent death; and the life of man, solitary, poor, nasty, brutish, and short.", author: "Thomas Hobbes" },
+        { text: "Curiosity is the lust of the mind.", author: "Thomas Hobbes" },
+        { text: "The first and fundamental law of Nature, which is, to seek peace and follow it.", author: "Thomas Hobbes" },
+        { text: "The source of every crime, is some defect of the understanding; or some error in reasoning; or some sudden force of the passions. Defect in the understanding is ignorance; in reasoning, erroneous opinion.", author: "Thomas Hobbes" },
+        ];
+
+        function generateQuote() {
+        const randomIndex = Math.floor(Math.random() * quotes.length);  
+        const selectedQuote = quotes[randomIndex];  
+        
+        document.getElementById("quote-text").innerHTML = `"${selectedQuote.text}"`;
+        document.getElementById("quote-author").innerHTML = `- ${selectedQuote.author}`;}
+        </script>
+    </body>
+</html>

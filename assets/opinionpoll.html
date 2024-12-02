@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Constitution Opinion Poll</title>
+        <link rel="stylesheet" type="text/css" href="poll.css">
+        <style>.navbar { background-color: #333; display: flex; justify-content: space-evenly; align-items: center; padding: 8px 20px; font-family: Georgia, serif;
+    } .navbar a, .dropdown { float: none;  display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none; font-family: Georgia, serif;
+    } .navbar a { border: none; outline: none; } .navbar a:hover { background-color: #ddd; color: black; } .dropdown { position: relative;
+    } .dropdown .dropbtn { background-color: #333; border: none; outline: none; color: white; padding: 14px 16px; font-size: 16px; cursor: pointer; font-family: Georgia, serif;
+    } .dropdown:hover .dropbtn { background-color: #ddd; color: black; } .dropdown .dropbtn:focus { outline: none; box-shadow: none; 
+    } .dropdown-content { display: none; position: absolute; background-color: #333; min-width: 160px; z-index: 1;
+    } .dropdown:hover .dropdown-content { display: block; } .dropdown-content a { color: white; padding: 12px 16px; text-decoration: none; display: block; font-family: Georgia, serif;
+    } .dropdown-content a:hover { background-color: #ddd; color: black; } </style>
+    </head>
+    
+    <body>
+       
+        
+        <h1>Constitution Influence Poll</h1>
+        
+        <section id="navigation" style="margin-bottom: 20px;">
+            <div class="navbar">
+                <a href="https://zelliewinterich.github.io/CMH/c_homepage.xhtml">Home</a> 
+                <div class="dropdown">
+                    
+                    <button class="dropbtn">The US Constitution
+                        <i class="fa fa-caret-down"></i>
+                        <!-- links for the constitution document-->
+                    </button>
+                    
+                    <div class="dropdown-content">
+                        <!-- Link to load the Constitution HTML page in the same window -->
+                        <a href="https://zelliewinterich.github.io/CMH/final_const.html">Constitution Document</a>
+                    </div>
+                    
+                </div> 
+                <div class="dropdown">
+                    <button class="dropbtn">Seminal Works 
+                        <i class="fa fa-caret-down"></i>
+                        <!-- links for seminal works -->
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="https://zelliewinterich.github.io/CMH/hobbes.xhtml">De Cive</a>
+                        <a href="https://zelliewinterich.github.io/CMH/Locke.xhtml">Second Treatise</a>
+                        <a href="https://zelliewinterich.github.io/CMH/rousseau.xhtml">Social Contract</a>
+                        <a href="https://zelliewinterich.github.io/CMH/SOL.xhtml">Spirit of Laws</a>
+                        <!-- for each seminal work -->
+                    </div>
+                </div> 
+                <div class="dropdown">
+                    <button class="dropbtn">About 
+                        <i class="fa fa-caret-down"></i>
+                        <!-- links for the about section -->
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="https://zelliewinterich.github.io/CMH/about.xhtml">Methodology</a>
+                        <!-- methodology page -->     
+                        <a href="https://zelliewinterich.github.io/CMH/thinker.xhtml">Thinkers</a>
+                        <!-- thinkers page -->
+                    </div>
+                </div> 
+                <div class="dropdown">
+                    <button class="dropbtn">Data and Graphs 
+                        <i class="fa fa-caret-down"></i>
+                        <!-- links for SVG, heatmap, and poll-->
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="https://zelliewinterich.github.io/CMH/const-test.html">Attribute Data</a>
+                        <a href="https://zelliewinterich.github.io/CMH/opinionpoll.html">Opinion Poll</a>
+                        <a href="https://zelliewinterich.github.io/CMH/SVGdata_sig.xhtml">SVG Graphs</a>
+                    </div>
+                </div> 
+                <a href="https://zelliewinterich.github.io/CMH/citation.xhtml">Work Cited</a>
+            </div>
+        </section>
+        
+        <section id="poll-section">
+            <h2>Who do you think influenced the U.S. Constitution the most?</h2>
+            
+            <form id="poll-form">
+                <label>
+                    <input type="radio" name="poll" value="Hobbes"> Thomas Hobbes
+                </label><br><br>
+                
+                <label>
+                    <input type="radio" name="poll" value="Locke"> John Locke
+                </label><br><br>
+                
+                <label>
+                    <input type="radio" name="poll" value="Rousseau"> Jean-Jacques Rousseau
+                </label><br><br>
+                
+                <label>
+                    <input type="radio" name="poll" value="Montesquieu"> Montesquieu
+                </label><br><br>
+                
+                <button type="button" onclick="submitPoll()">Submit Vote</button>
+            </form>
+            
+            <!-- Results Display -->
+            <div id="poll-results" style="display: none;">
+                <h3>Poll Results:</h3>
+                <p><strong>Thomas Hobbes:</strong> <span id="hobbes-count">0</span></p>
+                <p><strong>John Locke:</strong> <span id="locke-count">0</span></p>
+                <p><strong>Jean-Jacques Rousseau:</strong> <span id="rousseau-count">0</span></p>
+                <p><strong>Montesquieu:</strong> <span id="montesquieu-count">0</span></p>
+            </div>
+        </section>
+        
+        <script>
+        // Initialize poll counts
+        let pollResults = {
+            "Hobbes": 0,
+            "Locke": 0,
+            "Rousseau": 0,
+            "Montesquieu": 0
+        };
+
+        // Function to submit the poll
+        function submitPoll() {
+            const pollForm = document.getElementById('poll-form');
+            const pollOptions = document.getElementsByName('poll');  // Access the radio buttons by their name
+            let selectedOption = null;
+
+            // Loop through all radio buttons and find the checked one
+            for (let i = 0; i < pollOptions.length; i++) {
+                if (pollOptions[i].checked) {
+                    selectedOption = pollOptions[i].value;
+                    break;
+                }
+            }
+
+            // If no answer is selected, alert the user
+            if (!selectedOption) {
+                alert('Please select an option before submitting.');
+                return;
+            }
+
+            // Update the poll results count
+            pollResults[selectedOption]++;
+
+            // Display the poll results
+            document.getElementById('poll-results').style.display = 'block';
+            document.getElementById('hobbes-count').textContent = pollResults['Hobbes'];
+            document.getElementById('locke-count').textContent = pollResults['Locke'];
+            document.getElementById('rousseau-count').textContent = pollResults['Rousseau'];
+            document.getElementById('montesquieu-count').textContent = pollResults['Montesquieu'];
+
+            // Hide the poll form after submission
+            document.getElementById('poll-form').style.display = 'none';
+        }
+    </script>
+    </body>
+</html>

@@ -1,0 +1,79 @@
+body {
+    font-family: "Times New Roman", Times, serif;
+    background-color: white;
+    color: black;
+}
+h1 {
+    text-decoration: underline;
+}
+
+h2 {
+    text-decoration: underline;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+h3 {
+    text-decoration: underline;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+p* {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left:10px;
+}
+.p* {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.section * {
+    margin: 0;
+    padding: 0;
+}
+.section {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+a:link {
+    color:darkblue;
+}
+a:hover {
+    color: red;
+}
+a:visited {
+    color:CornflowerBlue;
+}
+
+#thinkerSelector {
+    height: 30px;  /* Adjust the height to match the height of the SVG */
+    font-size: 14px; /* Ensure consistency with the font size */
+    vertical-align: middle; /* Align the select box vertically in relation to the SVG */
+    padding: 0 10px; /* Adjust padding if necessary to match proportions */
+}
+
+svg {
+    transform: translateY(15px);
+    
+    /* Slightly adjust the position to align with the select box */
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+hr { 
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 5px;
+  border: 2px solid black;
+  border-top: red;
+  border-radius: 2px;
+}
